@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 17, 2021 lúc 09:15 PM
+-- Thời gian đã tạo: Th12 17, 2021 lúc 09:34 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -33,7 +33,8 @@ CREATE TABLE `comment` (
   `content_img` varchar(200) NOT NULL,
   `content_video` varchar(200) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `post_id` int(11) NOT NULL
+  `post_id` int(11) NOT NULL,
+  `createAt` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -59,7 +60,8 @@ CREATE TABLE `post` (
   `image` varchar(200) NOT NULL,
   `video` varchar(200) NOT NULL,
   `react` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `createAt` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

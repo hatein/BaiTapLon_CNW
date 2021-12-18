@@ -35,7 +35,7 @@
                 <div class="box_2_main">
                     <form class="form" action="./process/process-signin.php" method="post">
                         <input type="email" minlength="1" placeholder="Email" name="email">
-                        <input type="text" minlength="1" placeholder="Mật khẩu" name="password">
+                        <input type="password" minlength="1" placeholder="Mật khẩu" name="password">
                         <span style="margin-bottom: 5px;">
                             <?php
                                 if (isset($_SESSION['notify_signin'])) {
@@ -59,8 +59,10 @@
     <?php
     include './partials/footer.php';
     ?>
+    <div id="blocked"></div>
 
     <script src="./javascript/modal.js"></script>
+    <script src="./javascript/fetch_signup.js"></script>
 </body>
 
 </html>

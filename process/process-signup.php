@@ -47,19 +47,19 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
             $bodyContent = "<a style='font-size:20px;' href='http://localhost/BaiTapLon_CNW/process/process-authentication.php/?email=$email&key_auth=$key_auth'>Click vào đây để xác nhận tài khoản $email của bạn</a>";
 
             if (sendEmail($email, $title, $bodyContent)) {
-                $response = array('response' => 'Đã gửi link xác thực tài khoản về email của bạn.');
+                $response = array('status'=>'success','response' => 'Đã gửi link xác thực tài khoản về email của bạn.');
                 echo json_encode($response);
             }
         } else {
-            $response = array('response' => '"Lỗi hệ thống, đăng ký không thành công."');
+            $response = array('status'=>'error','response' => '"Lỗi hệ thống, đăng ký không thành công."');
             echo json_encode($response);
         }
     } else {
-        $response = array('response' => 'Tài khoản này đã tồn tại.');
+        $response = array('status'=>'error','response' => 'Tài khoản này đã tồn tại.');
         echo json_encode($response);
     }
 } else {
-    $response = array('response' => 'Bạn điền thiếu thông tin đăng ký.');
+    $response = array('status'=>'error','response' => 'Bạn điền thiếu thông tin đăng ký.');
     echo json_encode($response);
 }
 mysqli_close($conn);

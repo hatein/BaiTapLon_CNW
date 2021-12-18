@@ -43,7 +43,7 @@
                                 }
                                 ?></span>
                         <button type="submit">Đăng nhập</button>
-                        <a href="">Quên mật khẩu?</a>
+                        <a href="./forgot-password.php">Quên mật khẩu?</a>
                     </form>
                     <button class="new_acc" id="toogle_modal" type="button">Tạo tài khoản mới</button>
                 </div>

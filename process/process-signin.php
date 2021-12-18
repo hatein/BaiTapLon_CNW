@@ -45,7 +45,7 @@
                     if(isset($_SESSION['notify_signin'])){
                         unset($_SESSION['notify_signin']);
                     }
-                    $_SESSION['siginOK'] = $email;
+                    $_SESSION['signinOK'] = $email;
                     header('Location: ../home.php');
                 }
                 else{ // nếu status_auth = false thì gửi lại email bắt xác thực tài khoản

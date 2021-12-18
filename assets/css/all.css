@@ -6,3 +6,6 @@ body{
     padding: 0;
     cursor: default;
 }
+.container{
+    background-color: #f0f2f5;
+}

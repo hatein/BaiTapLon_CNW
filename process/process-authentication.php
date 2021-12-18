@@ -1,7 +1,7 @@
 <?php
     session_start();
     // Xac thuc tai khoan
-    include '../model/connectDB.php';
+    include './connectDB.php';
     if(isset($_GET['email']) && isset($_GET['key_auth'])){
         $conn = connectDB();
 

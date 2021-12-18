@@ -1,10 +1,17 @@
+<?php 
+    session_start();
+    if (isset($_SESSION['signinOK'])) {
+        header('Location: ./home.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
     <title>Facebook - Đăng nhập hoặc đăng ký</title>
     <link rel="stylesheet" href="./assets/css/all.css">
     <link rel="stylesheet" href="./assets/css/index.css">
@@ -22,8 +29,8 @@
             </div>
             <div class="box_2">
                 <div class="box_2_main">
-                    <form class="form" action="" method="post">
-                        <input type="email" placeholder="Email" name="username">
+                    <form class="form" action="./process/process-signin.php" method="post">
+                        <input type="email" placeholder="Email" name="email">
                         <input type="text" placeholder="Mật khẩu" name="password">
                         <span style="margin-bottom: 5px;">
                             <?php

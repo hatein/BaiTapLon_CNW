@@ -1,14 +1,17 @@
 <?php
+
 session_start();
 if (isset($_SESSION['signinOK'])) {
     header('Location: ../home.php');
 }
 // Đăng ký tài khoản
-include '../model/connectDB.php';
+include './connectDB.php';
 include '../send-email/sendEmail.php';
 
 // Khi dang ky , trong db neu chua co email nay thi them vao voi status_auth = false 
 // gui email xac nhap nguoi dung , nguoi dung xac nhan thì status_auth = true
+$conn = connectDB();
+
 
 if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullname']) && isset($_POST['birthday']) && isset($_POST['sex'])) {
     $email = $_POST['email'];
@@ -17,7 +20,6 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
     $birthday = $_POST['birthday'];
     $sex = $_POST['sex'];
 
-    $conn = connectDB();
     $sql = "select * from user where email = '$email'";
 
     $result = mysqli_query($conn, $sql);
@@ -37,7 +39,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
         $key_auth = password_hash($key, PASSWORD_DEFAULT);
 
         //tao 1 tai khoan voi status_auth = false , key_auth de kich hoat duoc ma hoa , key luu tren db , key_auth gui ve client
-        $sql2 = "insert into user (email,password,fullname,sex,birthday,status_auth,key_auth) values ('$email','$password_hash', $fullname , $sex ,$birthday ,'$status_auth','$key')";
+        $sql2 = "insert into user (email,password,fullname,sex,birthday,status_auth,key_auth) values ('$email','$password_hash', '$fullname' , '$sex' ,$birthday ,'$status_auth','$key')";
         $result2 = mysqli_query($conn, $sql2);
         // nếu $result2 thực hiện thành công thì gửi email kích hoạt cho client
         if ($result2 == true) {

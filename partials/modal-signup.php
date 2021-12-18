@@ -7,7 +7,7 @@
             </div>
             <button class="tt2" id="close_modal">X</button>
         </div>
-        <form class="form_modal" action="/process/process-signup.php" method="post" id="form_signup">
+        <form class="form_modal" action="./process/process-signup.php" method="post" id="form_signup">
             <div class="item_modal">
                 <input id="fullname" type="text" placeholder="Họ Tên" name="fullname">
             </div>
@@ -47,7 +47,7 @@
     const radio_female = document.querySelector('#radio_female');
 
     form_signup.onsubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault();        
         let sex = '0';
         if (radio_male.checked == true) {
             sex = '1';
@@ -55,20 +55,16 @@
         if (radio_female.checked == true) {
             sex = '0';
         }
+        let formData = new FormData();
+        formData.append('fullname',fullname.value);
+        formData.append('email', email.value);
+        formData.append('password',password.value);
+        formData.append('birthday',birthday.value);
+        formData.append('sex',sex);
 
-        console.log(fullname.value, email.value, password.value, birthday.value , sex)
         fetch('http://localhost/BaiTapLon_CNW/process/process-signup.php', {
                 method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    fullname: fullname.value,
-                    email: email.value,
-                    password: password.value,
-                    birthday: birthday.value,
-                    sex: sex
-                })
+                body: formData
             }).then(res => res.json())
             .then(data => console.log(data))
 

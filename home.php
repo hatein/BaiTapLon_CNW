@@ -4,3 +4,4 @@
         header('Location: ./index.php');
     }
 ?>
+<h1>helo</h1>

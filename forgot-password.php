@@ -28,7 +28,11 @@
             <form action="./process/process-forgot-password.php" method="post">
                 <label for="email"></label>
                 <input type="text" name="email" id="email" autocomplete="off" placeholder="Nhập tài khoản email của bạn">
+                <?php if(isset($_SESSION['message_change_password'])){
+                    echo '<p>'. $_SESSION['message_change_password'] .'</p>';
+                } ?>
                 <button type="submit">Lấy lại mật khẩu</button>
+                <a href="./index.php">Quay lại</a>
             </form>
         </div>
     </div>

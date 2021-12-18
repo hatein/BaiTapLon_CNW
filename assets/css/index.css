@@ -156,6 +156,12 @@ body{
     border: 1px solid rgba(0, 0, 0, 0.2);
     width: 70%;
 }
+.item_modal input[type='password']{
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 70%;
+}
 .item_modal input[type='date']{
     padding: 10px;
     border-radius: 6px;
@@ -165,6 +171,9 @@ body{
 .item_modal input[type='text']:focus-visible{
    outline: none;
 }
+.item_modal input[type='password']:focus-visible{
+    outline: none;
+ }
 .item_modal input[type='date']:focus-visible{
     outline: none;
 }

@@ -25,6 +25,12 @@
                     <form class="form" action="" method="post">
                         <input type="email" placeholder="Email" name="username">
                         <input type="text" placeholder="Mật khẩu" name="password">
+                        <span style="margin-bottom: 5px;">
+                            <?php
+                                if (isset($_SESSION['notify_signin'])) {
+                                    echo $_SESSION['notify_signin'];
+                                }
+                                ?></span>
                         <button type="submit">Đăng nhập</button>
                         <a href="">Quên mật khẩu?</a>
                     </form>

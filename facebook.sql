@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 17, 2021 lúc 09:34 PM
+-- Thời gian đã tạo: Th12 17, 2021 lúc 09:47 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -34,7 +34,7 @@ CREATE TABLE `comment` (
   `content_video` varchar(200) NOT NULL,
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
-  `createAt` date NOT NULL
+  `createAt` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -47,6 +47,13 @@ CREATE TABLE `hobby` (
   `hobby_id` int(11) NOT NULL,
   `hobby_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `hobby`
+--
+
+INSERT INTO `hobby` (`hobby_id`, `hobby_name`) VALUES
+(1, 'Dùng mạng xã hội Facebook');
 
 -- --------------------------------------------------------
 
@@ -61,7 +68,7 @@ CREATE TABLE `post` (
   `video` varchar(200) NOT NULL,
   `react` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `createAt` date NOT NULL
+  `createAt` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -89,7 +96,7 @@ CREATE TABLE `user` (
   `fullname` text NOT NULL,
   `sex` tinyint(1) NOT NULL,
   `birthday` date NOT NULL,
-  `hobby_id` int(11) NOT NULL,
+  `hobby_id` int(11) NOT NULL DEFAULT 1,
   `online` tinyint(1) NOT NULL,
   `key_auth` varchar(200) NOT NULL,
   `status_auth` tinyint(1) NOT NULL DEFAULT 0
@@ -148,13 +155,13 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT cho bảng `hobby`
 --
 ALTER TABLE `hobby`
-  MODIFY `hobby_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `hobby_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `search_history`
@@ -166,7 +173,7 @@ ALTER TABLE `search_history`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

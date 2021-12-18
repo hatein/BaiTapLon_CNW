@@ -7,18 +7,18 @@
             </div>
             <button class="tt2" id="close_modal">X</button>
         </div>
-        <form class="form_modal" action="" method="post">
+        <form class="form_modal" action="/process/process-signup.php" method="post" id="form_signup">
             <div class="item_modal">
-                <input type="text" placeholder="Họ Tên" name="fullname">
+                <input id="fullname" type="text" placeholder="Họ Tên" name="fullname">
             </div>
             <div class="item_modal">
-                <input type="text" placeholder="Email" name="email">
+                <input id="email" type="text" placeholder="Email" name="email">
             </div>
             <div class="item_modal">
-                <input type="text" placeholder="Mật khẩu mới" name="password">
+                <input id="password" type="password" placeholder="Mật khẩu mới" name="password">
             </div>
             <div class="item_modal">
-                <input type="date" name="birthday" id="birthday">
+                <input id="birthday" type="date" name="birthday" id="birthday">
             </div>
             <div class="item_modal">
                 <span class="radio_sex">
@@ -36,3 +36,41 @@
         </form>
     </div>
 </div>
+
+<script>
+    const form_signup = document.querySelector('#form_signup');
+    const fullname = document.querySelector('#fullname');
+    const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
+    const birthday = document.querySelector('#birthday');
+    const radio_male = document.querySelector('#radio_male');
+    const radio_female = document.querySelector('#radio_female');
+
+    form_signup.onsubmit = (e) => {
+        e.preventDefault();
+        let sex = '0';
+        if (radio_male.checked == true) {
+            sex = '1';
+        }
+        if (radio_female.checked == true) {
+            sex = '0';
+        }
+
+        console.log(fullname.value, email.value, password.value, birthday.value , sex)
+        fetch('http://localhost/BaiTapLon_CNW/process/process-signup.php', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    fullname: fullname.value,
+                    email: email.value,
+                    password: password.value,
+                    birthday: birthday.value,
+                    sex: sex
+                })
+            }).then(res => res.json())
+            .then(data => console.log(data))
+
+    }
+</script>

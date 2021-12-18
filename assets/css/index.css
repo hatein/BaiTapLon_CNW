@@ -101,7 +101,7 @@ body{
     color: white;
     border: none;
     background-color: #42b72a;
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 .new_acc:hover{
@@ -192,6 +192,12 @@ body{
     font-size: 18px;
     margin-bottom: 20px;
 }
+@media (max-width:1600px){
+    .new_acc{
+        font-size: 15px;
+        width: 70%;
+    }
+}
 
 @media (max-width:1300px){
     .box_main{
@@ -208,7 +214,7 @@ body{
         align-items: center;
     }
     .box_1,.box_2{
-        width: 80%;
+        width: 95%;
     }
     .box_1 {
         margin-bottom: 40px;

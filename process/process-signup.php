@@ -39,7 +39,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
         $key_auth = password_hash($key, PASSWORD_DEFAULT);
 
         //tao 1 tai khoan voi status_auth = false , key_auth de kich hoat duoc ma hoa , key luu tren db , key_auth gui ve client
-        $sql2 = "insert into user (email,password,fullname,sex,birthday,status_auth,key_auth) values ('$email','$password_hash', '$fullname' , '$sex' ,$birthday ,'$status_auth','$key')";
+        $sql2 = "insert into user (email,password,fullname,sex,birthday,status_auth,key_auth) values ('$email','$password_hash', '$fullname' , '$sex' ,'$birthday' ,'$status_auth','$key')";
         $result2 = mysqli_query($conn, $sql2);
         // nếu $result2 thực hiện thành công thì gửi email kích hoạt cho client
         if ($result2 == true) {
@@ -47,19 +47,19 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
             $bodyContent = "<a style='font-size:20px;' href='http://localhost/BaiTapLon_CNW/process/process-authentication.php/?email=$email&key_auth=$key_auth'>Click vào đây để xác nhận tài khoản $email của bạn</a>";
 
             if (sendEmail($email, $title, $bodyContent)) {
-                $response = array('success' => 'Đã gửi link xác thực tài khoản về email của bạn.');
+                $response = array('response' => 'Đã gửi link xác thực tài khoản về email của bạn.');
                 echo json_encode($response);
             }
         } else {
-            $response = array('error' => '"Lỗi hệ thống, đăng ký không thành công."');
+            $response = array('response' => '"Lỗi hệ thống, đăng ký không thành công."');
             echo json_encode($response);
         }
     } else {
-        $response = array('error' => 'Tài khoản này đã tồn tại.');
+        $response = array('response' => 'Tài khoản này đã tồn tại.');
         echo json_encode($response);
     }
 } else {
-    $response = array('error' => 'Bạn điền thiếu thông tin đăng ký.');
+    $response = array('response' => 'Bạn điền thiếu thông tin đăng ký.');
     echo json_encode($response);
 }
 mysqli_close($conn);

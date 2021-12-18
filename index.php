@@ -16,10 +16,14 @@
     <link rel="stylesheet" href="./assets/css/all.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/modal.css">
+    <link rel="stylesheet" href="./assets/css/toast.css">
 
 </head>
 
 <body>
+    <?php
+    require './partials/toast.php';
+    ?>
     <div class="container">
         <div class="box_main">
 
@@ -30,8 +34,8 @@
             <div class="box_2">
                 <div class="box_2_main">
                     <form class="form" action="./process/process-signin.php" method="post">
-                        <input type="email" placeholder="Email" name="email">
-                        <input type="text" placeholder="Mật khẩu" name="password">
+                        <input type="email" minlength="1" placeholder="Email" name="email">
+                        <input type="text" minlength="1" placeholder="Mật khẩu" name="password">
                         <span style="margin-bottom: 5px;">
                             <?php
                                 if (isset($_SESSION['notify_signin'])) {

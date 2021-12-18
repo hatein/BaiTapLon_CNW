@@ -9,13 +9,13 @@
         </div>
         <form class="form_modal" action="./process/process-signup.php" method="post" id="form_signup">
             <div class="item_modal">
-                <input id="fullname" type="text" placeholder="Họ Tên" name="fullname">
+                <input id="fullname" type="text" minlength="1" placeholder="Họ Tên" name="fullname">
             </div>
             <div class="item_modal">
-                <input id="email" type="text" placeholder="Email" name="email">
+                <input id="email" type="text" minlength="1" placeholder="Email" name="email">
             </div>
             <div class="item_modal">
-                <input id="password" type="password" placeholder="Mật khẩu mới" name="password">
+                <input id="password" type="password" minlength="1" placeholder="Mật khẩu mới" name="password">
             </div>
             <div class="item_modal">
                 <input id="birthday" type="date" name="birthday" id="birthday">
@@ -45,9 +45,10 @@
     const birthday = document.querySelector('#birthday');
     const radio_male = document.querySelector('#radio_male');
     const radio_female = document.querySelector('#radio_female');
+    const toast = document.querySelector('#toast');
 
     form_signup.onsubmit = (e) => {
-        e.preventDefault();        
+        e.preventDefault();
         let sex = '0';
         if (radio_male.checked == true) {
             sex = '1';
@@ -56,17 +57,34 @@
             sex = '0';
         }
         let formData = new FormData();
-        formData.append('fullname',fullname.value);
+        formData.append('fullname', fullname.value);
         formData.append('email', email.value);
-        formData.append('password',password.value);
-        formData.append('birthday',birthday.value);
-        formData.append('sex',sex);
+        formData.append('password', password.value);
+        formData.append('birthday', birthday.value);
+        formData.append('sex', sex);
 
-        fetch('http://localhost/BaiTapLon_CNW/process/process-signup.php', {
-                method: 'POST',
-                body: formData
-            }).then(res => res.json())
-            .then(data => console.log(data))
+
+        if (fullname.value && email.value && password.value && birthday.value && sex) {
+            fetch('http://localhost/BaiTapLon_CNW/process/process-signup.php', {
+                    method: 'POST',
+                    body: formData
+                }).then(res => res.json())
+                .then((data) => {
+                    if (data) {
+                        toast.style.display = 'block';
+                        toast.textContent = data.response;
+                        setInterval(() => {
+                            toast.style.display = 'none';
+                        }, 5000)
+                    }
+                })
+        } else {
+            toast.style.display = 'block';
+            toast.textContent = 'Chưa điền đủ thông tin';
+            setInterval(() => {
+                toast.style.display = 'none';
+            }, 4500)
+        }
 
     }
 </script>

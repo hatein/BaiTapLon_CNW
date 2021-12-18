@@ -56,7 +56,7 @@
                     Click vào đây để xác nhận tài khoản $email của bạn</a>";
 
                     sendEmail($email,$title,$bodyContent);
-                    $_SESSION['notify_signin'] = 'Đã gửi email xác thực tài khoản , bạn hãy kiểm tra hộp thư của mình';
+                    $_SESSION['notify_signin'] = 'Tài khoản chưa được kích hoạt, bạn hãy kiểm tra hộp thư cửa mình.';
                     header('Location: ../index.php');
                 }
             }

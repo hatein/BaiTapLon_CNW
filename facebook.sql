@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 17, 2021 lúc 09:47 PM
+-- Thời gian đã tạo: Th12 18, 2021 lúc 06:53 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -96,6 +96,8 @@ CREATE TABLE `user` (
   `fullname` text NOT NULL,
   `sex` tinyint(1) NOT NULL,
   `birthday` date NOT NULL,
+  `avatar` varchar(100) NOT NULL,
+  `background` varchar(100) NOT NULL,
   `hobby_id` int(11) NOT NULL DEFAULT 1,
   `online` tinyint(1) NOT NULL,
   `key_auth` varchar(200) NOT NULL,
@@ -173,7 +175,7 @@ ALTER TABLE `search_history`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

@@ -1,12 +1,13 @@
-<?php 
-    session_start();
-    if (isset($_SESSION['signinOK'])) {
-        header('Location: ./home.php');
-    }
+<?php
+session_start();
+if (isset($_SESSION['signinOK'])) {
+    header('Location: ./home.php');
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,10 +39,10 @@
                         <input type="password" minlength="1" placeholder="Mật khẩu" name="password">
                         <span style="margin-bottom: 5px;">
                             <?php
-                                if (isset($_SESSION['notify_signin'])) {
-                                    echo $_SESSION['notify_signin'];
-                                }
-                                ?></span>
+                            if (isset($_SESSION['notify_signin'])) {
+                                echo $_SESSION['notify_signin'];
+                            }
+                            ?></span>
                         <button type="submit">Đăng nhập</button>
                         <a href="./forgot-password.php">Quên mật khẩu?</a>
                     </form>
@@ -56,9 +57,6 @@
         ?>
     </div>
 
-    <?php
-    include './partials/footer.php';
-    ?>
     <div id="blocked"></div>
 
     <script src="./javascript/modal.js"></script>

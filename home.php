@@ -15,6 +15,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
     <title>Facebook</title>
     <link rel="stylesheet" href="./assets/css/all.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/home.css">
 </head>
@@ -24,11 +25,62 @@
     include './partials/header.php';
     ?>
     <div class="container">
-    <div class="component1"></div>
-    <div class="component2"></div>
-    <div class="component3"></div>
+        <div class="component1">
+            <a href="./user.php" class="item_component1">
+                <img src="./assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
+                <span>Đỗ Văn Xuân</span>
+            </a>
+            <a href="./hobby.php" class="item_component1">
+                <img class="hobby_img" src="./assets/img/hobby.png" alt="hobby">
+                <span>Nhóm sở thích</span>
+            </a>
+        </div>
+        <div class="component2">
+            <div class="component2_title">
+                <div class="box_component2_img">
+                    <img src="./assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
+                </div>
+                <input id="toogle_modal" type="text" placeholder="Đỗ Văn Xuân ơi, bạn đang nghĩ gì thế?">
+            </div>
+        </div>
+
+
+        <div class="component3">
+            <div class="component3_title item_component1 item_component3">Danh sách người dùng</div>
+            <a href="./user.php" class="item_component1 item_component3 online">
+                <img src="./assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
+                <span>Đỗ Văn Xuân</span>
+            </a>
+
+            <a href="./user.php" class="item_component1 item_component3 online">
+                <img src="./assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
+                <span>Đỗ Văn C</span>
+            </a>
+
+
+            <a href="./user.php" class="item_component1 item_component3 online">
+                <img src="./assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
+                <span>Đỗ Văn Xuân</span>
+            </a>
+        </div>
     </div>
 
+
+    <!-- Modal post -->
+    <div id="modal">
+        <div id="box_modal">
+            <div id="close_modal"></div>
+        </div>
+    </div>
+
+
+    <script src="./javascript/modal.js"></script>
+    <script>
+        const toogle_modal = document.querySelector('#toogle_modal')
+        toogle_modal.onfocus = (e) => {
+            toogle_modal.blur();
+        }
+    </script>
 </body>
 
 </html>

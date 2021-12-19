@@ -21,10 +21,18 @@
             <img src="" alt="" srcset="./assets/img/avt_null.jpg">
             <span>Đỗ Văn Xuân</span>
         </a>
+        <a class="box3_signout" href="./process/process-signout.php">Đăng xuất</a>
         <div class="menu_mb">
             <div class="menu_mb_item"></div>
             <div class="menu_mb_item"></div>
             <div class="menu_mb_item"></div>
+
+            <div class="menu_mb_tab">
+                <a href="./search.php">Tìm kiếm</a>
+                <a href="./hobby.php">Sở thích</a>
+                <a href="./change-password.php">Đổi mật khẩu</a>
+                <a href="./process/process-signout.php">Đăng xuất</a>
+            </div>
         </div>
     </div>
 </header>

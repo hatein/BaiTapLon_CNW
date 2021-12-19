@@ -1,3 +1,33 @@
 body{
     background-color: #f0f2f5;
 }
+.container{
+    margin-top: 60px;
+    display: flex;
+}
+.component1,.component3{
+    width: 30vw;
+    background-color: brown;
+    height: 300px;
+}
+.component2{
+    width: 40vw;
+    background-color: #fff;
+    height: 300px;
+}
+
+
+@media (max-width:800px){
+    .component1,.component3{
+        width: 0px;
+    }
+    .component2{
+        width: 100vw;
+        background-color: #fff;
+    }
+}
+@media (max-width:600px){
+    .container{
+        margin-top: 48px;
+    }
+}

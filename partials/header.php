@@ -21,5 +21,10 @@
             <img src="" alt="" srcset="./assets/img/avt_null.jpg">
             <span>Đỗ Văn Xuân</span>
         </a>
+        <div class="menu_mb">
+            <div class="menu_mb_item"></div>
+            <div class="menu_mb_item"></div>
+            <div class="menu_mb_item"></div>
+        </div>
     </div>
 </header>

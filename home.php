@@ -24,7 +24,9 @@
     include './partials/header.php';
     ?>
     <div class="container">
-
+    <div class="component1"></div>
+    <div class="component2"></div>
+    <div class="component3"></div>
     </div>
 
 </body>

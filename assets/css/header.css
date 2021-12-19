@@ -146,8 +146,26 @@ body{
         font-size: 14px;
     }
 }
-@media (max-width:570px){
+@media (max-width:550px){
     .box3_user span{
         display: none;
+    }
+    .menu_mb{
+        width: 24px;
+        height: 20px;
+        margin-left: 5px;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        padding: 5px;
+        background-color: #f0f2f5;
+        flex-direction: column;
+    }
+    .menu_mb_item{
+        height: 2px;
+        width: 90%;
+        background-color: black;
+        margin-top: 1.5px;
+        margin-bottom: 1.5px;
     }
 }

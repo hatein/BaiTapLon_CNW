@@ -7,7 +7,7 @@
             </div>
             <button class="tt2" id="close_modal">X</button>
         </div>
-        <form class="form_modal" action="./process/process-signup.php" method="post" id="form_signup">
+        <form class="form_modal" action="process/process-signup.php" method="post" id="form_signup">
             <div class="item_modal">
                 <input id="fullname" type="text" minlength="1" placeholder="Họ Tên" name="fullname">
             </div>

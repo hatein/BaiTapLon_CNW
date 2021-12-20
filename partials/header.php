@@ -19,7 +19,7 @@
     <div class="box3">
         <a class="box3_user" href='./user.php'>
             <img src="" alt="" srcset="./assets/img/avt_null.jpg">
-            <span>Đỗ Văn Xuân</span>
+            <span>Hoàng Thị Thu Uyên</span>
         </a>
         <a class="box3_signout" href="./process/process-signout.php">Đăng xuất</a>
         <div class="menu_mb">

@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if (isset($_SESSION['signinOK'])) {
-        header('Location: ./home.php');
+        header('Location: home.php');
     }
 ?>
 
@@ -12,9 +12,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-    <link rel="stylesheet" href="./assets/css/all.css">
-    <link rel="stylesheet" href="./assets/css/forgot_password.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/forgot_password.css">
     <title>Quên mật khẩu?</title>
 
 </head>
@@ -23,16 +23,16 @@
     <div class="container">
         <div class="main">
             <a href="./index.php">
-                <img src="./assets/img/fb_logo.svg" alt="logo" srcset="">
+                <img src="assets/img/fb_logo.svg" alt="logo" srcset="">
             </a>
-            <form action="./process/process-forgot-password.php" method="post">
+            <form action="process/process-forgot-password.php" method="post">
                 <label for="email"></label>
                 <input type="text" name="email" id="email" autocomplete="off" placeholder="Nhập tài khoản email của bạn">
                 <?php if(isset($_SESSION['message_change_password'])){
                     echo '<p>'. $_SESSION['message_change_password'] .'</p>';
                 } ?>
                 <button type="submit">Lấy lại mật khẩu</button>
-                <a href="./index.php">Quay lại</a>
+                <a href="index.php">Quay lại</a>
             </form>
         </div>
     </div>

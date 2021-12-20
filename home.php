@@ -60,7 +60,7 @@
 
             <a href="./user.php" class="item_component1 item_component3 online">
                 <img src="./assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
-                <span>Đỗ Văn Xuân</span>
+                <span>Hoàng Thị Thu Uyên</span>
             </a>
         </div>
     </div>

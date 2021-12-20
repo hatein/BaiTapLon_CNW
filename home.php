@@ -40,7 +40,7 @@
                 <div class="box_component2_img">
                     <img src="./assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
                 </div>
-                <input id="toogle_modal" type="text" placeholder="Đỗ Văn Xuân ơi, bạn đang nghĩ gì thế?">
+                <input id="toogle_modal" type="text" placeholder="Hoàng Thi Thu Uyên ơi, bạn đang nghĩ gì thế?">
             </div>
         </div>
 
